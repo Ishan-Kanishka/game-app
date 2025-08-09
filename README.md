@@ -1,59 +1,70 @@
-# GameApp
+cat << 'EOF' >> README.md
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+# Game App — Angular Setup Notes
 
-## Development server
+## 1. Installed Node.js
+- Downloaded from: [https://nodejs.org](https://nodejs.org)
+- Installed **LTS (Long Term Support)** version.
+- Verified installation:
+```bash
+node -v    # Check Node.js version
+npm -v     # Check npm version
+```
 
-To start a local development server, run:
+---
 
+## 2. Installed Angular CLI Globally
+```bash
+npm install -g @angular/cli
+```
+- Verified installation:
+```bash
+ng version
+```
+
+---
+
+## 3. Created New Angular Project
+```bash
+ng new game-app
+```
+**CLI Prompts & Answers:**
+1. **Do you want to create a zoneless app without zone.js?** → **No**  
+   *Reason:* Keeping `zone.js` is easier for beginners; it auto-detects UI changes.  
+2. **Would you like to add Angular routing?** → **Yes**  
+   *Reason:* Allows navigation between pages/components (e.g., Home, Game).  
+3. **Which stylesheet format would you like to use?** → **CSS**  
+   *Reason:* Simple for starting; can switch to SCSS later if needed.  
+4. **Do you want to enable SSR (Server-Side Rendering)?** → **No**  
+   *Reason:* Not needed for a small SPA game; avoids extra complexity.
+
+---
+
+## 4. Navigated into Project Folder
+```bash
+cd game-app
+```
+
+---
+
+## 5. Started Development Server
 ```bash
 ng serve
 ```
+- App available at: **http://localhost:4200**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 6. Project Structure Overview
+Key files inside `src/app`:
+- **app.component.ts** → Main component logic (TypeScript)
+- **app.component.html** → Main HTML template
+- **app.component.css** → Styles for main component
+- **app.module.ts** → Registers components & modules
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## Next Step
+Create a **Game Component** to add a Flappy Bird-like game using `<canvas>`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+EOF
